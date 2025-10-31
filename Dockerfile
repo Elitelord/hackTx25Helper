@@ -1,3 +1,8 @@
+# ---- Build stage ----
+FROM python:3.11-slim AS builder
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
 # Install build deps for some Python packages (kept minimal)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
